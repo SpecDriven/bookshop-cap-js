@@ -1,0 +1,5 @@
+code,symbol,name,descr,minorUnit
+EUR,€,Euro,European Euro,2
+USD,$,US Dollar,,2
+GBP,£,British Pound,Pound sterling,2
+JPY,¥,Japanese Yen,,0

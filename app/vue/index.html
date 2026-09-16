@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Capire Books</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+  <div id="app">
+
+    <header>
+      <h1>Capire Books</h1>
+      <button type="button" @click="login">Login</button>
+    </header>
+
+    <input type="search" placeholder="Search..." @input="fetch($event.target.value)">
+
+    <table class="hovering">
+      <thead>
+        <tr><th>Book</th><th>Author</th><th>Genre</th><th>Price</th></tr>
+      </thead>
+      <tbody>
+        <tr v-for="b in books" :key="b.ID" @click="inspect(b)">
+          <td>{{ b.title }}</td>
+          <td>{{ b.author }}</td>
+          <td>{{ b.genre }}</td>
+          <td>{{ b.currency && b.currency.symbol }} {{ b.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section v-if="details" class="details">
+      <form @submit.prevent="submitOrder">
+        <span class="stock">{{ details.stock }} in stock</span>
+        <label>Order: <input type="number" min="1" v-model.number="order.quantity" :class="{ failed: order.failed }"></label>
+        <button type="submit">Submit</button>
+      </form>
+      <h2>{{ details.title }}</h2>
+      <p>{{ details.descr }}</p>
+      <p v-if="order.succeeded" class="succeeded">{{ order.succeeded }}</p>
+      <p v-if="order.failed" class="failed">{{ order.failed }}</p>
+    </section>
+    <p v-else class="hint">( click on a row to see details... )</p>
+
+    <footer id="user-info" v-if="user">
+      {{ user.id }} <span v-if="user.locale">({{ user.locale }})</span> — press <kbd>u</kbd> to hide
+    </footer>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

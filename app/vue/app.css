@@ -1,0 +1,15 @@
+body { font-family: system-ui, sans-serif; max-width: 48rem; margin: 3rem auto; padding: 0 1rem; color: #222; background: #fff; }
+header { display: flex; justify-content: space-between; align-items: baseline; }
+input[type=search] { width: 100%; padding: .5rem; margin-bottom: 1rem; box-sizing: border-box; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid #ddd; }
+.hovering tbody tr:hover td { background: #123; color: cyan; cursor: pointer; }
+.details { margin-top: 1.5rem; }
+.details form { float: right; display: flex; gap: .5rem; align-items: center; }
+.details input[type=number] { width: 5em; }
+.stock { color: #666; margin-right: .5rem; }
+.succeeded { color: teal; }
+.failed { color: red; }
+input.failed { border-color: red; }
+.hint { color: #888; margin-top: 1.5rem; }
+#user-info { position: fixed; bottom: 10px; right: 20px; font-style: italic; color: #555; }

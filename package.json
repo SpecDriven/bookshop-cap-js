@@ -1,0 +1,26 @@
+{
+  "name": "bookshop-cap-js",
+  "version": "1.0.0",
+  "description": "The CAP bookshop from the getting-started tutorial, generated from the SpecDriven specs in specs-cap-bookshop.",
+  "repository": "https://github.com/SpecDriven/bookshop-cap-js",
+  "license": "Apache-2.0",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^9",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-test": "^1",
+    "@cap-js/sqlite": "^2",
+    "jest": "^30"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 30000
+  }
+}
